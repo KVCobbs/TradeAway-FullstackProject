@@ -36,7 +36,7 @@ app.get('/posts/:postId', (req,res) => {
 //update(put) a post
 app.put('/posts/:postId', (req,res) => {
     let id = parseInt(req.params.postId);
-    let iteration = post.find(post => post.id === id);
+    let iteration = posts.find(post => post.id === id);
     res.json(iteration)
 }) 
 
