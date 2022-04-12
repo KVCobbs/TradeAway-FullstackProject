@@ -1,0 +1,27 @@
+{
+  "name": "tradeaway-fullstackproject",
+  "version": "1.0.0",
+  "description": "This project is for Marcy Lab Students unit 7 group 1",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KVCobbs/TradeAway-FullstackProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KVCobbs/TradeAway-FullstackProject/issues"
+  },
+  "homepage": "https://github.com/KVCobbs/TradeAway-FullstackProject#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "knex": "^1.0.4",
+    "node": "^17.7.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
+  }
+}
