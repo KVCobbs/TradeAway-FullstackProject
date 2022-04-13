@@ -1,4 +1,4 @@
-const postmodels = require('../models/blogmodels')
+const blogmodels = require('../models/blogmodels')
 
 
 //HOME SCREEN
@@ -9,36 +9,36 @@ const home2 = async(req, res) => {
 
 //GET ALL POSTS
 const getAllBlogs = async(req, res) => {
-  let selectAllBlogs = await postmodels.getAllBlogsDB()
+  let selectAllBlogs = await blogmodels.getAllBlogsDB()
   res.status(200).json(selectAllBlogs)
 }
 
 
 //GET SINGLE POST
 const getSingleBlogs = async(req, res) => {
-  let selectSingleBlog = await postmodels.getSingleBlogsDB()
+  let selectSingleBlog = await blogmodels.getSingleBlogsDB()
   res.status(200).json(selectSingleBlog)
 }
 
 
 //MAKE NEW POST
 const createNewBlog = async(req, res) => {
-  let makeNewBlog = await postmodels.createNewBlogsDB()
+  let makeNewBlog = await blogmodels.createNewBlogsDB()
   res.status(200).json(makeNewBlog)
 }
 
 
 //UPDATE EXISTING POST
 const updateBlog = async(req, res) => {
-  let fixBlog = await postmodels.updateBlogDB()
+  let fixBlog = await blogmodels.updateBlogDB()
   res.status(200).json(fixBlog)
 }
 
 
 //DELETE EXISTING POST
 const deleteBlog = async(req, res) => {
-  let destroyPost = await postmodels.deleteBlogDB()
-  res.status(200)
+  let destroyBlog = await blogmodels.deleteBlogDB()
+  res.status(200).json(destroyBlog);
 }
 
 module.exports = {
