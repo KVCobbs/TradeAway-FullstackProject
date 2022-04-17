@@ -6,27 +6,34 @@ function getAllBlogsDB(){
 }
 
 
-//GET A SINGLE BLOG
-function getOneBlogDB(blogID){
-  return dbpool.query('SELECT * FROM blogs WHERE blog_id = $1', [blogID]).then(results => results.rows[0])
+//GET ALL BLOGS FROM A SINGLE USER
+function getAllBlogsSingleUserDB(blogID){
+  return dbpool.query('SELECT * FROM blogs WHERE user_id = $1', [blogID]).then(results => results.rows)
 }
 
 
 //CREATE A BLOG
-function createNewBlogDB(blogContent){
-  return dbpool.query('INSERT INTO blogs (blog_content) VALUES ($1) RETURNING *', [blogContent]).then(results => results.rows[0])
+function createNewBlogDB(userID, blogContent){
+  return dbpool.query('INSERT INTO blogs (user_id, content) VALUES ($1, $2) RETURNING *', [userID, blogContent]).then(results => results.rows[0])
+}
+
+
+//UPDATE EXISTING BLOG
+function updateBlogDB(blogContent, userID, blogID){
+  return dbpool.query('UPDATE blogs SET content = $1 WHERE user_id = $2 AND blog_id = $3 RETURNING *', [blogContent, userID, blogID]).then(results => results.rows[0])
 }
 
 
 //DELETE A BLOG
-function deleteOneBlogDB(blogID){
-  return dbpool.query('DELETE FROM blogs WHERE blog_id = $1', [blogID])
+function deleteOneBlogDB(userID, blogID){
+  return dbpool.query('DELETE FROM blogs WHERE user_id = $1 AND blog_id = $2', [userID, blogID])
 }
 
 
 module.exports = {
   getAllBlogsDB,
-  getOneBlogDB,
+  getAllBlogsSingleUserDB,
   createNewBlogDB,
+  updateBlogDB,
   deleteOneBlogDB
 }

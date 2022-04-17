@@ -7,44 +7,52 @@ const home2 = async(req, res) => {
 }
 
 
-//GET ALL POSTS
+//GET ALL BLOGS
 const getAllBlogs = async(req, res) => {
   let selectAllBlogs = await blogmodels.getAllBlogsDB()
   res.status(200).json(selectAllBlogs)
 }
 
 
-//GET SINGLE POST
-const getSingleBlogs = async(req, res) => {
-  let selectSingleBlog = await blogmodels.getSingleBlogsDB()
+//GET ALL BLOGS FROM A SINGLE USER
+const getAllBlogsSingleUser = async(req, res) => {
+  const userID = parseInt(req.params.id)
+  let selectSingleBlog = await blogmodels.getAllBlogsSingleUserDB(userID)
   res.status(200).json(selectSingleBlog)
 }
 
 
-//MAKE NEW POST
+//MAKE NEW BLOG
 const createNewBlog = async(req, res) => {
-  let makeNewBlog = await blogmodels.createNewBlogsDB()
+  const userID = parseInt(req.params.id)
+  const {content} = req.body
+  let makeNewBlog = await blogmodels.createNewBlogDB(userID, content)
   res.status(200).json(makeNewBlog)
 }
 
 
-//UPDATE EXISTING POST
+//UPDATE EXISTING BLOG
 const updateBlog = async(req, res) => {
-  let fixBlog = await blogmodels.updateBlogDB()
+  const userID = parseInt(req.params.id)
+  const blogID = parseInt(req.params.blogid)
+  const {content} = req.body
+  let fixBlog = await blogmodels.updateBlogDB(content, userID, blogID)
   res.status(200).json(fixBlog)
 }
 
 
-//DELETE EXISTING POST
+//DELETE EXISTING BLOG
 const deleteBlog = async(req, res) => {
-  let destroyBlog = await blogmodels.deleteBlogDB()
+  const userID = parseInt(req.params.id)
+  const blogID = parseInt(req.params.blogid)
+  let destroyBlog = await blogmodels.deleteOneBlogDB(userID, blogID)
   res.status(200).json(destroyBlog);
 }
 
 module.exports = {
   home2,
   getAllBlogs,
-  getSingleBlogs,
+  getAllBlogsSingleUser,
   createNewBlog,
   updateBlog,
   deleteBlog

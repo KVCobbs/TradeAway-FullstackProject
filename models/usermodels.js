@@ -7,14 +7,14 @@ function getAllUsersDB(){
 
 
 //GET A SINGLE USER'S DATA
-function getOneUserDB(userID){
-  return dbpool.query('SELECT * FROM users WHERE users.id = $1', [userID]).then(results => results.rows[0])
+function getSingleUserDB(userID){
+  return dbpool.query('SELECT * FROM users WHERE user_id = $1', [userID]).then(results => results.rows[0])
 }
 
 
 //CREATE A NEW USER
-function addNewUserToDB(username, password){
-  return dbpool.query('INSERT INTO users(user_name, user_password) VALUES ($1, $2) RETURNING *', [username, password]).then(results => results.rows[0])
+function createNewUserDB(username, password){
+  return dbpool.query('INSERT INTO users (user_name, user_password) VALUES ($1, $2) RETURNING *', [username, password]).then(results => results.rows[0])
 }
 
 
@@ -32,8 +32,8 @@ function deleteUserDB(userID){
 
 module.exports = {
   getAllUsersDB,
-  getOneUserDB,
-  addNewUserToDB,
+  getSingleUserDB,
+  createNewUserDB,
   updateUserDB,
   deleteUserDB
 }

@@ -7,11 +7,11 @@ router.get('/home', (req,res) => {
 res.send('HELLO BABIES')
 })
 
-router.get('/user', userController.getAllUsers)
+router.get('/users', userController.getAllUsers)
 
 router.get('/users/:id', userController.getSingleUser)
 
-router.post('/user', userController.createNewUser)
+router.post('/users', userController.createNewUser)
 
 router.put('/users/:id', userController.updateUser)
 

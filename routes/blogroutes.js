@@ -6,23 +6,23 @@ const blogcontrols = require('../controllers/blogcontrollers')
 router.get('/home2', blogcontrols.home2)
 
 
-//GET ALL POSTS
-router.get('/blog', blogcontrols.getAllBlogs)
+//GET ALL BLOG
+router.get('/blogs', blogcontrols.getAllBlogs)
 
 
-//GET SINGLE POST
-router.get('/blogs/:id', blogcontrols.getSingleBlogs)
+//GET ALL BLOGS FROM A SINGLE USER
+router.get('/blogs/:id', blogcontrols.getAllBlogsSingleUser)
 
 
-//MAKE NEW POST
-router.post('/blog', blogcontrols.createNewBlog)
+//MAKE NEW BLOG
+router.post('/blogs/:id', blogcontrols.createNewBlog)
 
 
-//UPDATE EXISTING POST
-router.put('/blogs/:id', blogcontrols.updateBlog)
+//UPDATE EXISTING BLOG
+router.put('/blogs/:id/:blogid', blogcontrols.updateBlog)
 
 
-//DELETE EXISTING POST
-router.delete('/blogs/:id', blogcontrols.deleteBlog)
+//DELETE EXISTING BLOG
+router.delete('/blogs/:id/:blogid', blogcontrols.deleteBlog)
 
 module.exports = router
