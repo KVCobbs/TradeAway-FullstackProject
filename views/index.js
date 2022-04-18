@@ -54,7 +54,7 @@ document.getElementById("login").addEventListener('click', () => {
 .then(res => res.json())
 .then(data => {
 	if(data.message === "success"){
-		// window.location.href = "sample.html";
+		// window.location.href = "blogs.html";
 		window.alert("login is good")
 	}
 });
