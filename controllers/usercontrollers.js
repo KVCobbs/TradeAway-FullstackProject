@@ -7,31 +7,39 @@ const home = (req, res) => {
 
 //Get ALL Users 
 const getAllUsers = async(req, res) => {
-    let selectAllUsers = await postmodels.getAllUsersDB()
+    let selectAllUsers = await usermodels.getAllUsersDB()
     res.status(200).json(selectAllUsers)
 } 
 
 //Get single user
 const getSingleUser = async(req,res) => {
-    let selectSingleUser = await usermodels.getSingleUserDB()
+    const userID = parseInt(req.params.id)
+    let selectSingleUser = await usermodels.getSingleUserDB(userID)
     res.status(200).json(selectSingleUser)
 }
 
 //Create New User 
 const createNewUser = async(req,res) => {
-    let createNewUser = await usermodels.createNewUserDB()
+    // const {username, password} = req.body
+    const username = req.body.user_name
+    const password = req.body.user_password
+    let createNewUser = await usermodels.createNewUserDB(username, password)
     res.status(200).json(createNewUser)
 }
 
 //Update existing user 
 const updateUser = async(req, res) => {
-    let fixUser = await usermodels.updateUserDB()
+    const userID = parseInt(req.params.id)
+    const username = req.body.user_name
+    const password = req.body.user_password
+    let fixUser = await usermodels.updateUserDB(username, password, userID)
     res.status(200).json(fixUser)
 }
 
 //delete existing user 
 const deleteUser = async(req, res) => {
-    let destroyUser = await usermodels.deleteUserDB()
+    const userID = parseInt(req.params.id)
+    let destroyUser = await usermodels.deleteUserDB(userID)
     res.status(200).json(destroyUser)
 }
 

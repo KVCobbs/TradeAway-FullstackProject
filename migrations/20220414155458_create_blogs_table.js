@@ -4,8 +4,8 @@
  */
 exports.up = function(knex) {
     return knex.schema.createTable('blogs',(table) => {
-    table.increments('id').primary()
-    table.integer('users_id').references('id').inTable('users').onDelete('cascade');
+    table.increments('blog_id').primary()
+    table.integer('user_id').references('user_id').inTable('users').onDelete('cascade');
     table.string('content', 500)
     })
 };
