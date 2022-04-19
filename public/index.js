@@ -54,11 +54,11 @@ document.getElementById("login-form").addEventListener('submit', (event) => {
 })
 .then(res => res.json())
 .then(data => {
-	// accountName.innerText = "data.username"
 	console.log(data.message)
 	if(data.message === "success"){
 		console.log("we're in")
 		window.location.href = "/blogs.html";
+		accountName.innerText = `${data.username}`
 		// window.alert("login is good")
 	}
 });
