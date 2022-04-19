@@ -54,7 +54,7 @@ app.post('/login', async (req, res) => {
               'x-timestamp': Date.now(),
               'x-sent': true
             }}
-        res.status(200).json({message: "success", username: "username"})
+        res.status(200).json({message: "success", username: username})
         // res.redirect("http://127.0.0.1:5500/unit-7/TradeAway-FullstackProject/views/blogs.html")
         // res.redirect("/blogs")
         // res.render(`${url}/blogs.html`)
