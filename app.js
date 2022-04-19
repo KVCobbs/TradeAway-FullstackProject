@@ -15,11 +15,9 @@ app.use(cors());
 // app.use("/users", userRouter)
 // app.use("/blogs", blogRouter)
 const path = require('path')
-// app.use('/static', express.static(path.join(__dirname, 'public')))
-let url = path.join(__dirname, `views`)
-console.log(path.join(__dirname, 'views/login'))
-
-
+app.use(express.static(path.join(__dirname, 'public')))
+// let url = path.join(__dirname, `views`)
+// console.log(path.join(__dirname, 'views/login')
 
 app.get('/', (req, res) => {
     res.status(200).send('hello')
@@ -56,7 +54,7 @@ app.post('/login', async (req, res) => {
               'x-timestamp': Date.now(),
               'x-sent': true
             }}
-        res.status(200).json({message: "success"})
+        res.status(200).json({message: "success", username: "username"})
         // res.redirect("http://127.0.0.1:5500/unit-7/TradeAway-FullstackProject/views/blogs.html")
         // res.redirect("/blogs")
         // res.render(`${url}/blogs.html`)
