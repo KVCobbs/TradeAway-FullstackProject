@@ -12,6 +12,7 @@ Trade away where there’s no money involved!
 
 # Sub-Heading
 Describe who the market for the product is and what benefit they get. (One sentence only underneath the title)
+<br>
 The market is for people who want to get items but don’t want to use money to get it. 
 
 # Summary
