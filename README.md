@@ -1,25 +1,18 @@
 # TradeAway-FullstackProject
-This project is for Marcy Lab Students unit 7 group 1 
-Project Name - Hand off. Trade Off. Trade Away. 
+This project is for Marcy Lab Students unit 7 group 1 <br>
+Project Name - Trade Away. 
 
 
 # Heading
 Name the product in a way the reader (i.e. your target customers) will understand. (3+ sentences)
-Trade away where there’s no money involved. 
+<br>
+Trade away where there’s no money involved! 
 
 
 
 # Sub-Heading
 Describe who the market for the product is and what benefit they get. (One sentence only underneath the title)
 The market is for people who want to get items but don’t want to use money to get it. 
-
-
-
-
-
-
-
-
 
 # Summary
 Give a summary of the product and the benefit. What are all the things a user can do when use your product? This is the most important section for your readers, so make this paragraph good. (5+ sentences)
