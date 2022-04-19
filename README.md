@@ -29,23 +29,26 @@ User can post the item they want to trade. User can see their other posts of oth
 Trade a bobby or a house you decide the value of your items. 
 
 
-
 # Problem
-Describe the problem your product solves. Who experiences this problem? (3+ sentences)
+Describe the problem your product solves. Who experiences this problem? (3+ sentences) <br>
 Everyone. I have an item I dont want but I don’t want to sell it for less than it’s value. Trading is an easier way to part with items 
 
 
 # Solution
 Describe how your product elegantly solves the problem. (3+ sentences)
-
+<br>
 Our product makes trading physical items easie more reliable and more natural transactions. 
 
 # Key Technical Challenge
 What will likely be the most challenging technical hurdle you must overcome in order to complete this project?
+<br>
 
 Mohammad: Making sure the frontend is properly aligned with the backend 
+<br>
 Andrew: Understanding both the frontend and the back end portion of this project
+<br>
 Kenya: Making sure the MVP is done. 
+<br>
 
 # Extension Opportunities
 What are opportunities for you to expand the scope of this project by adding additional features to solve new but related problems?
