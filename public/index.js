@@ -37,9 +37,10 @@ document.getElementById("create_account").addEventListener('click', () => {
 .then(data => console.log(data));
 })
 
+const accountName = document.getElementById("account-name")
 
-
-document.getElementById("login").addEventListener('click', () => {
+document.getElementById("login-form").addEventListener('submit', (event) => {
+	event.preventDefault()
 	fetch('http://localhost:3000/login', {
 		method: 'POST',
 		headers: {
@@ -53,10 +54,11 @@ document.getElementById("login").addEventListener('click', () => {
 })
 .then(res => res.json())
 .then(data => {
+	// accountName.innerText = "data.username"
 	console.log(data.message)
 	if(data.message === "success"){
 		console.log("we're in")
-		window.location.href = "blogs.html";
+		window.location.href = "/blogs.html";
 		// window.alert("login is good")
 	}
 });
