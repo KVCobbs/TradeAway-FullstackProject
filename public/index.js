@@ -57,8 +57,9 @@ document.getElementById("login-form").addEventListener('submit', (event) => {
 	console.log(data.message)
 	if(data.message === "success"){
 		console.log("we're in")
+		// accountName.innerText = data.username
 		window.location.href = "/blogs.html";
-		accountName.innerText = `${data.username}`
+		// accountName.innerText = `${data.username}`
 		// window.alert("login is good")
 	}
 });
