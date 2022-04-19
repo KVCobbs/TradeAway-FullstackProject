@@ -52,10 +52,13 @@ Kenya: Making sure the MVP is done.
 
 # Extension Opportunities
 What are opportunities for you to expand the scope of this project by adding additional features to solve new but related problems?
-
+<br>
 Slider for item availability 
+<br>
 Inserting images 
+<br>
 Comment section
+<br>
 
 # ERD Diagram
 https://drive.google.com/file/d/1YWW2jA-p2QIEgMEb5VhSn55u9juUiD-O/view?usp=sharing 
